@@ -4,7 +4,7 @@ Tài liệu này trình bày bức tranh tổng quan của **PerGoal** — hệ 
 
 ## 1. Vấn đề & Tầm nhìn
 
-**Nỗi đau người dùng:**
+**Khó khăn người dùng gặp phải:**
 
 - **Quên nhiệm vụ**: người dùng đặt ra mục tiêu nhưng không có cơ chế nhắc nhở đúng lúc, đúng kênh, dẫn đến bỏ lỡ nhiệm vụ và mục tiêu dở dang.
 - **Thiếu nhất quán**: mục tiêu, nhiệm vụ và thói quen nằm rải rác ở ghi chú, lịch, ứng dụng khác nhau; không có một nguồn dữ liệu thống nhất để theo dõi tiến độ.
