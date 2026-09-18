@@ -1,6 +1,6 @@
-# Workflow hệ thống — Goal Habit Manager (GHM)
+# Workflow hệ thống — PerGoal
 
-Tài liệu này đặc tả **5 workflow chính** của hệ thống **Goal Habit Manager (GHM)** theo mục 5 của spec chuẩn. Mỗi workflow gồm: mô tả, Actor chính, Preconditions, Main Flow (đánh số bước, ghi rõ service/class tham gia), Alternative/Exception Flow và Postconditions. Các sơ đồ quan trọng được vẽ **cả Mermaid lẫn PlantUML** trong hai code block liền nhau, kèm chú thích ngắn bên dưới.
+Tài liệu này đặc tả **5 workflow chính** của hệ thống **PerGoal** theo mục 5 của spec chuẩn. Mỗi workflow gồm: mô tả, Actor chính, Preconditions, Main Flow (đánh số bước, ghi rõ service/class tham gia), Alternative/Exception Flow và Postconditions. Các sơ đồ quan trọng được vẽ **cả Mermaid lẫn PlantUML** trong hai code block liền nhau, kèm chú thích ngắn bên dưới.
 
 Luồng dữ liệu tổng quát: `Client → API → Service → Repository → DB`; `ReminderScheduler → Service → NotificationService → Push/Email/In-app`; `Client nhận push → mở app → gọi API`.
 
@@ -409,7 +409,7 @@ stop
 ## Workflow 4 — Vòng lặp nhắc nhở & hoàn thành (workflow trung tâm)
 
 ### Mô tả
-Workflow trung tâm của GHM, chạy liên tục: `ReminderScheduler` cron **mỗi phút** quét `Reminder` đến hạn → `ReminderService.dispatchDue()` → `NotificationService` gửi qua `ReminderPopup`/Push/Email → User phản hồi **Complete / Snooze / Skip** (hoặc không phản hồi) → ghi `ProgressLog.record()` → `Goal.calculateProgress()` và `Streak.increment()`/`Streak.reset()` → nếu Goal đạt 100% thì `Goal.complete()` (`GoalStatus.COMPLETED`) kèm chúc mừng. Đây là vòng lặp đảm bảo mục tiêu sản phẩm: hình thành thói quen quản lý mục tiêu.
+Workflow trung tâm của PerGoal, chạy liên tục: `ReminderScheduler` cron **mỗi phút** quét `Reminder` đến hạn → `ReminderService.dispatchDue()` → `NotificationService` gửi qua `ReminderPopup`/Push/Email → User phản hồi **Complete / Snooze / Skip** (hoặc không phản hồi) → ghi `ProgressLog.record()` → `Goal.calculateProgress()` và `Streak.increment()`/`Streak.reset()` → nếu Goal đạt 100% thì `Goal.complete()` (`GoalStatus.COMPLETED`) kèm chúc mừng. Đây là vòng lặp đảm bảo mục tiêu sản phẩm: hình thành thói quen quản lý mục tiêu.
 
 ### Actor chính
 - **Scheduler / Reminder Engine** (`ReminderScheduler`).

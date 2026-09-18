@@ -44,7 +44,7 @@
 ## Hyperedges (group relationships)
 - **Vòng lặp nhắc nhở & hoàn thành (Workflow 4)** — graphify_03_workflow_he_thong_workflow_4_vong_lap_nhac_nho_hoan_thanh, graphify_05_kien_truc_va_van_hanh_reminderscheduler, graphify_05_kien_truc_va_van_hanh_reminderservice, graphify_05_kien_truc_va_van_hanh_notificationservice, graphify_04_luot_man_hinh_reminderpopup, graphify_02_mo_hinh_huong_doi_tuong_taskinstance, graphify_02_mo_hinh_huong_doi_tuong_progresslog, graphify_02_mo_hinh_huong_doi_tuong_streak [EXTRACTED 1.00]
 - **Phễu LandingPage → AuthPage → OnboardingPage → MainPage (Workflow 1)** — graphify_04_luot_man_hinh_landingpage, graphify_04_luot_man_hinh_authpage, graphify_04_luot_man_hinh_onboardingpage, graphify_04_luot_man_hinh_mainpage, graphify_03_workflow_he_thong_workflow_1_onboarding_dang_ky, graphify_02_mo_hinh_huong_doi_tuong_user [EXTRACTED 1.00]
-- **Kiến trúc phân lớp Client - API - Application - Domain - Infrastructure của GHM** — graphify_05_kien_truc_va_van_hanh_client_spa_pwa, graphify_05_kien_truc_va_van_hanh_api_gateway, graphify_05_kien_truc_va_van_hanh_goalservice, graphify_05_kien_truc_va_van_hanh_taskservice, graphify_05_kien_truc_va_van_hanh_habitservice, graphify_05_kien_truc_va_van_hanh_reminderservice, graphify_05_kien_truc_va_van_hanh_analyticsservice, graphify_05_kien_truc_va_van_hanh_notificationservice, graphify_05_kien_truc_va_van_hanh_postgresql, graphify_05_kien_truc_va_van_hanh_redis_job_queue, graphify_05_kien_truc_va_van_hanh_reminderscheduler [EXTRACTED 1.00]
+- **Kiến trúc phân lớp Client - API - Application - Domain - Infrastructure của PerGoal** — graphify_05_kien_truc_va_van_hanh_client_spa_pwa, graphify_05_kien_truc_va_van_hanh_api_gateway, graphify_05_kien_truc_va_van_hanh_goalservice, graphify_05_kien_truc_va_van_hanh_taskservice, graphify_05_kien_truc_va_van_hanh_habitservice, graphify_05_kien_truc_va_van_hanh_reminderservice, graphify_05_kien_truc_va_van_hanh_analyticsservice, graphify_05_kien_truc_va_van_hanh_notificationservice, graphify_05_kien_truc_va_van_hanh_postgresql, graphify_05_kien_truc_va_van_hanh_redis_job_queue, graphify_05_kien_truc_va_van_hanh_reminderscheduler [EXTRACTED 1.00]
 
 ## Communities (7 total, 0 thin omitted)
 
@@ -70,11 +70,11 @@ Nodes (12): UC-04 Tạo & quản lý Goal, UC-05 Tạo Task / RecurringTask, UC-
 
 ### Community 5 - "Nhiệm vụ, Ưu tiên & Lộ trình"
 Cohesion: 0.28
-Nodes (9): OneTimeTask (entity), Priority (enum), Task (abstract class), TaskStatus (enum), MoSCoW — khung phân loại ưu tiên, MVP (Tuần 2-6), Lộ trình triển khai GHM 12 tuần, Sprint 0 — Chuẩn bị (Tuần 1) (+1 more)
+Nodes (9): OneTimeTask (entity), Priority (enum), Task (abstract class), TaskStatus (enum), MoSCoW — khung phân loại ưu tiên, MVP (Tuần 2-6), Lộ trình triển khai PerGoal 12 tuần, Sprint 0 — Chuẩn bị (Tuần 1) (+1 more)
 
 ### Community 6 - "Prompt & Knowledge Graph"
 Cohesion: 0.29
-Nodes (8): Definition of Done, Knowledge Graph tài liệu GHM, Plan kỹ thuật (object model + workflow + UI flow + kiến trúc), Prompt gốc (người dùng), Prompt nâng cấp (System Designer / Software Architect), Chia việc subagent song song (1 subagent / 1 file), Goal Habit Manager (GHM), Chia việc theo subagent/parallel trong triển khai
+Nodes (8): Definition of Done, Knowledge Graph tài liệu PerGoal, Plan kỹ thuật (object model + workflow + UI flow + kiến trúc), Prompt gốc (người dùng), Prompt nâng cấp (System Designer / Software Architect), Chia việc subagent song song (1 subagent / 1 file), PerGoal, Chia việc theo subagent/parallel trong triển khai
 
 ## Ambiguous Edges - Review These
 - `Workflow 2 — Tạo mục tiêu` → `Workflow 3 — Sinh nhiệm vụ lặp lại`  [AMBIGUOUS]
@@ -93,7 +93,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.216) - this node is a cross-community bridge._
 - **Why does `MVP (Tuần 2-6)` connect `Nhiệm vụ, Ưu tiên & Lộ trình` to `Reminder & Thông báo`, `Onboarding & Điều hướng chính`, `Theo dõi & Điều phối nền`, `Thói quen & Chu kỳ lặp`, `Tạo mục tiêu & Kiến trúc`?**
   _High betweenness centrality (0.143) - this node is a cross-community bridge._
-- **Why does `Goal Habit Manager (GHM)` connect `Prompt & Knowledge Graph` to `Reminder & Thông báo`, `Onboarding & Điều hướng chính`, `Theo dõi & Điều phối nền`, `Thói quen & Chu kỳ lặp`, `Tạo mục tiêu & Kiến trúc`, `Nhiệm vụ, Ưu tiên & Lộ trình`?**
+- **Why does `PerGoal` connect `Prompt & Knowledge Graph` to `Reminder & Thông báo`, `Onboarding & Điều hướng chính`, `Theo dõi & Điều phối nền`, `Thói quen & Chu kỳ lặp`, `Tạo mục tiêu & Kiến trúc`, `Nhiệm vụ, Ưu tiên & Lộ trình`?**
   _High betweenness centrality (0.129) - this node is a cross-community bridge._
 - **What connects `UC-01 Đăng ký tài khoản`, `UC-02 Đăng nhập`, `UC-03 Onboarding & thiết lập ban đầu` to the rest of the system?**
   _13 weakly-connected nodes found - possible documentation gaps or missing edges._

@@ -1,6 +1,6 @@
 # 02 — Mô hình hướng đối tượng
 
-Tài liệu này mô tả **mô hình miền hướng đối tượng** của hệ thống **Goal Habit Manager (GHM)** bằng sơ đồ lớp, đặc tả từng class, value object, enumeration, state diagram và ví dụ cài đặt. Triết lý thiết kế:
+Tài liệu này mô tả **mô hình miền hướng đối tượng** của hệ thống **PerGoal** bằng sơ đồ lớp, đặc tả từng class, value object, enumeration, state diagram và ví dụ cài đặt. Triết lý thiết kế:
 
 - **Entity = danh từ nghiệp vụ**: mỗi khái niệm người dùng nhìn thấy trong miền (Goal, Task, Habit, Streak, Reminder...) là một entity có định danh (`id`), vòng đời và trạng thái riêng.
 - **Service = hành vi liên entity**: các hành vi vắt qua nhiều entity hoặc cần phối hợp hạ tầng (sinh instance, quét nhắc nhở, thống kê) được đặt trong application/domain service (`GoalService`, `TaskService`, `HabitService`, `ReminderService`, `AnalyticsService`, `NotificationService`, `ReminderScheduler`) thay vì nhồi vào entity.
@@ -901,7 +901,7 @@ export class ProductivityMetric {
 
 ## Liên kết
 
-- [01 — Tổng quan hệ thống](./01-tong-quan-he-thong.md) — Bối cảnh, tác nhân, mục tiêu sản phẩm và phạm vi của GHM.
+- [01 — Tổng quan hệ thống](./01-tong-quan-he-thong.md) — Bối cảnh, tác nhân, mục tiêu sản phẩm và phạm vi của PerGoal.
 - [03 — Workflow hệ thống](./03-workflow-he-thong.md) — Các workflow nghiệp vụ chính: onboarding, tạo mục tiêu, sinh nhiệm vụ lặp, nhắc nhở & hoàn thành, tổng kết tuần.
 - [04 — Lượt màn hình](./04-luot-man-hinh.md) — Luồng màn hình từ LandingPage → AuthPage → OnboardingPage → MainPage và các tab.
 - [05 — Kiến trúc và vận hành](./05-kien-truc-va-van-hanh.md) — Kiến trúc client/API/domain/infrastructure, scheduler, notification và triển khai.

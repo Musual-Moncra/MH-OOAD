@@ -1,6 +1,6 @@
 # 05 — Kiến trúc & Vận hành
 
-Tài liệu này mô tả kiến trúc triển khai của **Goal Habit Manager (GHM)**: từ Client SPA/PWA qua API Gateway, các Application Service (`GoalService`, `TaskService`, `HabitService`, `ReminderService`, `AnalyticsService`), Domain entities, Infrastructure (PostgreSQL, Redis + job queue, `ReminderScheduler` worker) tới `NotificationService` và các kênh `IN_APP` / `PUSH` / `EMAIL`. Nội dung bám sát mục 6 (Kiến trúc) và mục 8 (Quy ước trình bày) của spec chuẩn.
+Tài liệu này mô tả kiến trúc triển khai của **PerGoal**: từ Client SPA/PWA qua API Gateway, các Application Service (`GoalService`, `TaskService`, `HabitService`, `ReminderService`, `AnalyticsService`), Domain entities, Infrastructure (PostgreSQL, Redis + job queue, `ReminderScheduler` worker) tới `NotificationService` và các kênh `IN_APP` / `PUSH` / `EMAIL`. Nội dung bám sát mục 6 (Kiến trúc) và mục 8 (Quy ước trình bày) của spec chuẩn.
 
 ---
 
@@ -55,7 +55,7 @@ flowchart LR
 ```plantuml
 @startuml
 skinparam componentStyle rectangle
-title Kiến trúc tổng thể — Goal Habit Manager (GHM)
+title Kiến trúc tổng thể — PerGoal
 
 actor "User" as U
 component "Client SPA/PWA\n(React + TypeScript)" as SPA
@@ -362,7 +362,7 @@ erDiagram
 @startuml
 hide circle
 skinparam linetype ortho
-title ERD — Goal Habit Manager (GHM)
+title ERD — PerGoal
 
 entity "users" as users {
   * id : uuid <<PK>>
@@ -610,7 +610,7 @@ flowchart TB
 
 ```plantuml
 @startuml
-title Deployment — Goal Habit Manager (GHM)
+title Deployment — PerGoal
 
 actor "Người dùng" as U
 cloud "CDN / Static host\n(Vercel / Netlify / S3 + CloudFront)" as CDN

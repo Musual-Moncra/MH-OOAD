@@ -1,6 +1,6 @@
 # 06 — Lộ trình triển khai
 
-Tài liệu này chuyển thiết kế của **Goal Habit Manager (GHM)** thành lộ trình triển khai 12 tuần: thứ tự ưu tiên, phạm vi từng giai đoạn (MVP → v1.1 → v1.2 → v2), ước lượng theo story point, phân công theo role, rủi ro và KPI. Roadmap bám sát mục 7 của spec chuẩn; các hạng mục ngoài spec được ghi rõ là "(mở rộng v2)".
+Tài liệu này chuyển thiết kế của **PerGoal** thành lộ trình triển khai 12 tuần: thứ tự ưu tiên, phạm vi từng giai đoạn (MVP → v1.1 → v1.2 → v2), ước lượng theo story point, phân công theo role, rủi ro và KPI. Roadmap bám sát mục 7 của spec chuẩn; các hạng mục ngoài spec được ghi rõ là "(mở rộng v2)".
 
 ## 1. Nguyên tắc ưu tiên
 
@@ -107,7 +107,7 @@ Ghi chú: trước MVP có **Sprint 0 (Tuần 1)** là giai đoạn chuẩn bị
 
 ```mermaid
 gantt
-    title Lộ trình triển khai GHM — 12 tuần
+    title Lộ trình triển khai PerGoal — 12 tuần
     dateFormat YYYY-MM-DD
     axisFormat Tuần %W
 
@@ -134,7 +134,7 @@ gantt
 
 ```plantuml
 @startgantt
-title Lộ trình triển khai GHM — 12 tuần
+title Lộ trình triển khai PerGoal — 12 tuần
 Project starts 2026-09-21
 saturday are closed
 sunday are closed

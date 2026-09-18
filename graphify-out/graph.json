@@ -5,7 +5,7 @@
     "hyperedges": [
       {
         "id": "layered_architecture_components",
-        "label": "Ki\u1ebfn tr\u00fac ph\u00e2n l\u1edbp Client - API - Application - Domain - Infrastructure c\u1ee7a GHM",
+        "label": "Ki\u1ebfn tr\u00fac ph\u00e2n l\u1edbp Client - API - Application - Domain - Infrastructure c\u1ee7a PerGoal",
         "nodes": [
           "graphify_05_kien_truc_va_van_hanh_client_spa_pwa",
           "graphify_05_kien_truc_va_van_hanh_api_gateway",
@@ -1183,7 +1183,7 @@
     },
     {
       "id": "graphify_06_lo_trinh_trien_khai_roadmap",
-      "label": "L\u1ed9 tr\u00ecnh tri\u1ec3n khai GHM 12 tu\u1ea7n",
+      "label": "L\u1ed9 tr\u00ecnh tri\u1ec3n khai PerGoal 12 tu\u1ea7n",
       "author": null,
       "captured_at": null,
       "community": 5,
@@ -1255,7 +1255,7 @@
     },
     {
       "id": "graphify_00_prompt_plan_ky_thuat_knowledge_graph",
-      "label": "Knowledge Graph t\u00e0i li\u1ec7u GHM",
+      "label": "Knowledge Graph t\u00e0i li\u1ec7u PerGoal",
       "author": null,
       "captured_at": null,
       "community": 6,
@@ -1325,7 +1325,7 @@
     },
     {
       "id": "graphify_01_tong_quan_he_thong_goal_habit_manager",
-      "label": "Goal Habit Manager (GHM)",
+      "label": "PerGoal",
       "author": null,
       "captured_at": null,
       "community": 6,
@@ -3947,7 +3947,7 @@
   "hyperedges": [
     {
       "id": "layered_architecture_components",
-      "label": "Ki\u1ebfn tr\u00fac ph\u00e2n l\u1edbp Client - API - Application - Domain - Infrastructure c\u1ee7a GHM",
+      "label": "Ki\u1ebfn tr\u00fac ph\u00e2n l\u1edbp Client - API - Application - Domain - Infrastructure c\u1ee7a PerGoal",
       "nodes": [
         "graphify_05_kien_truc_va_van_hanh_client_spa_pwa",
         "graphify_05_kien_truc_va_van_hanh_api_gateway",

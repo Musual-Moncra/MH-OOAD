@@ -1,6 +1,6 @@
 # 04 — Luồng màn hình (LandingPage → MainPage)
 
-Tài liệu này đặc tả cấu trúc màn hình và luồng điều hướng của Goal Habit Manager (GHM), từ **LandingPage** (khách chưa đăng nhập) → **AuthPage** → **OnboardingPage** → **MainPage** (App Shell với 6 tab chức năng) cùng các overlay như ReminderPopup, NotificationCenter, TaskFormModal.
+Tài liệu này đặc tả cấu trúc màn hình và luồng điều hướng của PerGoal, từ **LandingPage** (khách chưa đăng nhập) → **AuthPage** → **OnboardingPage** → **MainPage** (App Shell với 6 tab chức năng) cùng các overlay như ReminderPopup, NotificationCenter, TaskFormModal.
 
 **Nguyên tắc thiết kế UI:**
 - *Progressive onboarding*: khách chỉ cần 1 CTA để bắt đầu; người dùng mới hoàn thành cấu hình tối thiểu (timezone + goal đầu tiên) ngay trong Onboarding.
@@ -48,7 +48,7 @@ flowchart TD
     TaskFormModal["TaskFormModal (overlay)"] -.-> GoalDetail
 ```
 
-*Hình 1a — Sitemap dạng flowchart: toàn bộ màn hình của GHM và các cạnh điều hướng chính; overlay được vẽ nét đứt vì không nằm trong cây page.*
+*Hình 1a — Sitemap dạng flowchart: toàn bộ màn hình của PerGoal và các cạnh điều hướng chính; overlay được vẽ nét đứt vì không nằm trong cây page.*
 
 ```plantuml
 @startuml
@@ -110,7 +110,7 @@ User --> Dashboard
 
 | Thành phần UI | Nội dung | Dữ liệu nguồn (class/service) | Hành động & điều hướng |
 |---|---|---|---|
-| Header | Logo GHM, nav (Tính năng / Cách hoạt động / Đăng nhập), CTA "Bắt đầu miễn phí" | Tĩnh | CTA → `AuthPage` (tab Register); "Đăng nhập" → `AuthPage` (tab Login) |
+| Header | Logo PerGoal, nav (Tính năng / Cách hoạt động / Đăng nhập), CTA "Bắt đầu miễn phí" | Tĩnh | CTA → `AuthPage` (tab Register); "Đăng nhập" → `AuthPage` (tab Login) |
 | Hero | Headline "Biến mục tiêu thành thói quen", sub-headline, 2 CTA, ảnh minh họa Dashboard | Tĩnh (ảnh mock từ DashboardPage) | CTA chính → `AuthPage`; CTA phụ "Xem demo" → anchor `#features` |
 | Features (4 khối) | (1) Mục tiêu có độ ưu tiên, (2) Nhiệm vụ lặp lại & Habit, (3) Nhắc nhở thông minh, (4) Thống kê tiến độ | Tĩnh, mô tả `Goal`, `RecurringTask`/`Habit`, `Reminder`, `AnalyticsService` | Không điều hướng, chỉ cuộn |
 | How-it-works (3 bước) | 1. Tạo mục tiêu → 2. Chia nhiệm vụ & đặt nhắc nhở → 3. Hoàn thành, giữ streak | Luồng workflow 2 & 4 | Anchor `#how` |
@@ -242,12 +242,12 @@ User --> Dashboard
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│  GHM  Goal Habit Manager    Tính năng  Cách hoạt động  [Đăng nhập] │
+│  PerGoal    Tính năng  Cách hoạt động  [Đăng nhập] │
 │                                              [ Bắt đầu miễn phí ] │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
 │   Biến mục tiêu thành thói quen                              │
-│   Tạo mục tiêu, chia nhiệm vụ, để GHM nhắc bạn mỗi ngày      │
+│   Tạo mục tiêu, chia nhiệm vụ, để PerGoal nhắc bạn mỗi ngày      │
 │                                                              │
 │   [ Bắt đầu miễn phí ]   [ Xem demo ]                        │
 │                                       ┌──────────────────┐   │
@@ -261,9 +261,9 @@ User --> Dashboard
 ├──────────────────────────────────────────────────────────────┤
 │  1. Tạo mục tiêu  →  2. Chia nhiệm vụ  →  3. Giữ streak      │
 ├──────────────────────────────────────────────────────────────┤
-│  "GHM giúp tôi duy trì thói quen 90 ngày" — Người dùng       │
+│  "PerGoal giúp tôi duy trì thói quen 90 ngày" — Người dùng       │
 ├──────────────────────────────────────────────────────────────┤
-│  Điều khoản · Bảo mật · Liên hệ            © 2026 GHM        │
+│  Điều khoản · Bảo mật · Liên hệ            © 2026 PerGoal        │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -271,7 +271,7 @@ User --> Dashboard
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│  GHM        Hôm nay  Mục tiêu  Thói quen  Lịch  Thống kê    🔔3 │
+│  PerGoal        Hôm nay  Mục tiêu  Thói quen  Lịch  Thống kê    🔔3 │
 ├────────────┬─────────────────────────────────────────────────┤
 │ Dashboard  │  Hôm nay, 18/09            ○ 70%  (3/5 xong)    │
 │ Mục tiêu   ├─────────────────────────────────────────────────┤

@@ -1,6 +1,6 @@
 # 01 — Tổng quan hệ thống
 
-Tài liệu này trình bày bức tranh tổng quan của **Goal Habit Manager (GHM)** — hệ thống web app (responsive/PWA) giúp người dùng tạo mục tiêu (Goal), quản lý nhiệm vụ một lần & lặp lại (Task/RecurringTask/Habit), đặt thuộc tính (độ ưu tiên, năng suất/effort) và nhận nhắc nhở để đảm bảo hoàn thành. Nội dung gồm vấn đề & tầm nhìn, mục tiêu, phạm vi, tác nhân, yêu cầu chức năng/phi chức năng, danh sách use case kèm sơ đồ, và sơ đồ ngữ cảnh hệ thống. Mọi thuật ngữ, tên class, trạng thái, tên màn hình trong tài liệu đều tuân theo canonical spec của dự án.
+Tài liệu này trình bày bức tranh tổng quan của **PerGoal** — hệ thống web app (responsive/PWA) giúp người dùng tạo mục tiêu (Goal), quản lý nhiệm vụ một lần & lặp lại (Task/RecurringTask/Habit), đặt thuộc tính (độ ưu tiên, năng suất/effort) và nhận nhắc nhở để đảm bảo hoàn thành. Nội dung gồm vấn đề & tầm nhìn, mục tiêu, phạm vi, tác nhân, yêu cầu chức năng/phi chức năng, danh sách use case kèm sơ đồ, và sơ đồ ngữ cảnh hệ thống. Mọi thuật ngữ, tên class, trạng thái, tên màn hình trong tài liệu đều tuân theo canonical spec của dự án.
 
 ## 1. Vấn đề & Tầm nhìn
 
@@ -10,7 +10,7 @@ Tài liệu này trình bày bức tranh tổng quan của **Goal Habit Manager 
 - **Thiếu nhất quán**: mục tiêu, nhiệm vụ và thói quen nằm rải rác ở ghi chú, lịch, ứng dụng khác nhau; không có một nguồn dữ liệu thống nhất để theo dõi tiến độ.
 - **Không đo lường được**: người dùng không biết mình đã hoàn thành bao nhiêu phần trăm mục tiêu, dành bao nhiêu phút tập trung, hay chuỗi thói quen (Streak) đang ở mức nào để điều chỉnh hành vi.
 
-**Giá trị GHM mang lại:**
+**Giá trị PerGoal mang lại:**
 
 - Một nơi duy nhất để tạo và theo dõi **Goal → Task/RecurringTask/Habit** với độ ưu tiên (Priority) và năng suất (ProductivityMetric) rõ ràng.
 - **Scheduler / Reminder Engine** chạy nền tự động sinh nhiệm vụ lặp lại (TaskInstance), quét Reminder đến hạn và phối hợp **NotificationService** gửi qua IN_APP/PUSH/EMAIL — đảm bảo người dùng không quên.
@@ -160,7 +160,7 @@ flowchart LR
     Scheduler["Scheduler / Reminder Engine"]
     Notif["NotificationService"]
 
-    subgraph GHM["Goal Habit Manager (GHM)"]
+    subgraph PerGoal["PerGoal"]
         direction TB
         UC01["UC-01 Đăng ký tài khoản"]
         UC02["UC-02 Đăng nhập"]
@@ -207,7 +207,7 @@ actor "Admin" as Admin
 actor "Scheduler / Reminder Engine" as Scheduler
 actor "NotificationService" as Notif
 
-rectangle "Goal Habit Manager (GHM)" {
+rectangle "PerGoal" {
   usecase "UC-01 Đăng ký tài khoản" as UC01
   usecase "UC-02 Đăng nhập" as UC02
   usecase "UC-03 Onboarding & thiết lập ban đầu" as UC03
@@ -253,7 +253,7 @@ flowchart LR
     User["User (Web SPA / PWA)"]
     Admin["Admin"]
 
-    subgraph GHM["Goal Habit Manager (GHM)"]
+    subgraph PerGoal["PerGoal"]
         API["REST API / JWT"]
         Services["Application Services: GoalService, TaskService, HabitService, ReminderService, AnalyticsService"]
         Worker["ReminderScheduler (worker)"]
@@ -284,7 +284,7 @@ skinparam componentStyle rectangle
 actor "User" as User
 actor "Admin" as Admin
 
-component "Goal Habit Manager (GHM)" as GHM {
+component "PerGoal" as PerGoal {
   [REST API / JWT] as API
   [Application Services] as SVC
   [ReminderScheduler] as SCH
@@ -309,7 +309,7 @@ SVC --> EMAIL
 @enduml
 ```
 
-*Chú thích: User tương tác GHM qua REST API/JWT từ Web SPA/PWA; bên trong, API gọi các Application Service, dữ liệu lưu ở PostgreSQL và job đặt qua Redis + Job Queue. ReminderScheduler quét Reminder đến hạn và phối hợp NotificationService gửi qua Web Push (VAPID/FCM) hoặc Email (SendGrid); Admin truy cập API với quyền quản trị.*
+*Chú thích: User tương tác PerGoal qua REST API/JWT từ Web SPA/PWA; bên trong, API gọi các Application Service, dữ liệu lưu ở PostgreSQL và job đặt qua Redis + Job Queue. ReminderScheduler quét Reminder đến hạn và phối hợp NotificationService gửi qua Web Push (VAPID/FCM) hoặc Email (SendGrid); Admin truy cập API với quyền quản trị.*
 
 ## Liên kết
 

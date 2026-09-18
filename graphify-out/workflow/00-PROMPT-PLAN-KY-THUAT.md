@@ -1,6 +1,6 @@
 # 00 — Prompt dựng Plan kỹ thuật
 
-File này đóng vai trò "điểm vào" (entry point) của bộ tài liệu thiết kế hệ thống **Goal Habit Manager (GHM)**: nó lưu lại prompt gốc của người dùng, phiên bản prompt đã được cấu trúc hóa thành prompt dựng plan kỹ thuật, quy trình thực hiện, cách chia việc cho subagent và Definition of Done. Toàn bộ thuật ngữ, tên class, trạng thái và tên màn hình trong các file 01–06 PHẢI khớp canonical spec của dự án.
+File này đóng vai trò "điểm vào" (entry point) của bộ tài liệu thiết kế hệ thống **PerGoal**: nó lưu lại prompt gốc của người dùng, phiên bản prompt đã được cấu trúc hóa thành prompt dựng plan kỹ thuật, quy trình thực hiện, cách chia việc cho subagent và Definition of Done. Toàn bộ thuật ngữ, tên class, trạng thái và tên màn hình trong các file 01–06 PHẢI khớp canonical spec của dự án.
 
 ## Mục lục tài liệu
 
@@ -26,7 +26,7 @@ Bạn là **System Designer / Software Architect** chịu trách nhiệm chuyể
 
 ### Bối cảnh
 
-- Hệ thống: **Goal Habit Manager (GHM)** — web app (responsive/PWA) cho phép người dùng tạo **Goal**, nhiệm vụ một lần và lặp lại (**Task/OneTimeTask/RecurringTask/Habit**), đặt thuộc tính (**Priority**, **ProductivityMetric**), hệ thống nhắc nhở (**Reminder**, **ReminderScheduler**) để đảm bảo hoàn thành.
+- Hệ thống: **PerGoal** — web app (responsive/PWA) cho phép người dùng tạo **Goal**, nhiệm vụ một lần và lặp lại (**Task/OneTimeTask/RecurringTask/Habit**), đặt thuộc tính (**Priority**, **ProductivityMetric**), hệ thống nhắc nhở (**Reminder**, **ReminderScheduler**) để đảm bảo hoàn thành.
 - Mục tiêu sản phẩm: hình thành và duy trì thói quen quản lý mục tiêu cho người dùng.
 - Đối tượng đọc: giảng viên/người chấm đồ án OOAD, thành viên nhóm triển khai, và các subagent viết tài liệu.
 
